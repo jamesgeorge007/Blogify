@@ -16,6 +16,14 @@ func main() {
     		ctx.View("create_post.html")
     	})
 
+    app.Get("/update", func(ctx iris.Context){
+    		// Handle Update Blog.
+    	})
+
+    app.Get("/delete", func(ctx iris.Context){
+    		// Handle Delete Blog.
+    	})
+
     /* app.Post("/create", func(ctx iris.Context){
     	username := ctx.PostValue("Username")
     	ctx.ViewData("user", username)
