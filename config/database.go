@@ -12,7 +12,6 @@ import (
 type configurations struct {
 	DATABASE string `yaml:"DATABASE"`
 	SERVER   string `yaml:"SERVER"`
-	PORT     int    `yaml:"PORT"`
 }
 
 var db *mgo.Database
