@@ -20,7 +20,8 @@ func loginUser(ctx iris.Context) {
 
 func fetchPosts(ctx iris.Context) {
 	// Fetch Posts
-
+	posts, _ := repo.GetAll()
+	ctx.JSON(posts)
 }
 
 func createPosts(ctx iris.Context) {
