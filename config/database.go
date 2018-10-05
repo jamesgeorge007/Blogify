@@ -9,14 +9,14 @@ import (
 	yaml "gopkg.in/yaml.v2"
 )
 
-type configurations struct {
+type Configurations struct {
 	DATABASE string `yaml:"DATABASE"`
 	SERVER   string `yaml:"SERVER"`
 }
 
 var db *mgo.Database
 
-func (c *configurations) Connect() {
+func (c *Configurations) Connect() *mgo.Database {
 	server, database := GetConnectionCredentials()
 
 	session, err := mgo.Dial(server)
@@ -26,12 +26,14 @@ func (c *configurations) Connect() {
 	}
 
 	db = session.DB(database)
+
+	return db
 }
 
 //Get connection creds
 func GetConnectionCredentials() (string, string) {
 
-	var c *configurations
+	var c *Configurations
 	//Obtain values from yaml config
 	yamlFile, err := ioutil.ReadFile("app.yaml")
 	if err != nil {
