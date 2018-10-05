@@ -31,7 +31,7 @@ func CreateOne(post models.Post) error {
 
 func GetAll() ([]models.Post, error) {
 	var posts []models.Post
-	err := db.C(COLLECTION).Find(bson.M{}).All(posts)
+	err := db.C(COLLECTION).Find(bson.M{}).All(&posts)
 
 	return posts, err
 }
