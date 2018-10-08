@@ -1,8 +1,9 @@
 package repositories
 
 import (
-	conn "Blogify/config"
-	"Blogify/models"
+	conn "github.com/Blogify/config"
+
+	"github.com/Blogify/models"
 
 	"gopkg.in/mgo.v2/bson"
 )
@@ -16,9 +17,18 @@ const (
 	COLLECTION = "posts"
 )
 
+// Update a post
+func Update(post models.Post) error {
+	return db.C(COLLECTION).UpdateId(&post.ID, &post)
+}
+
+// Delete a post
+func Delete(post models.Post) error {
+	return db.C(COLLECTION).RemoveId(&post.ID)
+}
+
 //Creates a new post
 func CreateOne(post models.Post) error {
-
 	new_post.ID = bson.NewObjectId()
 	new_post.Name = post.Name
 	new_post.Description = post.Description
