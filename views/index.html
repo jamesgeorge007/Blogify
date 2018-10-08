@@ -4,7 +4,15 @@
 	<title></title>
 </head>
 <body>
-	<h2>{{ .message }}</h2>
+	<h2>Welcome to Blogify</h2>
 	<a href="/create">Post</a>
+	{{ range .Posts}}
+	<h3>{{.Name}}</h3>
+		<p>
+			<small>{{.ID}}</small>
+		</p>
+		<p>{{.Description}}</p>
+		<hr>
+	{{end}}
 </body>
 </html>
