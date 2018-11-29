@@ -1,10 +1,7 @@
 # Blogify
 
 A Blogging platform backed up by Go lang (Iris web framework) and Mongo-DB.
-
-## Status
-
-> Development phase.
+This project is still in the infancy state, any kind of contributions are welcome :+1:
 
 ### Database connection
 
