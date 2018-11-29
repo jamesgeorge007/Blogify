@@ -6,5 +6,5 @@ A Blogging platform backed up by Go lang (Iris web framework) and Mongo-DB.
 
 > Development phase.
 
-## Database connection
+### Database connection
 Edit the `app.yaml` file with the correct db credentials.
